@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../db/item');
+var multer = require('multer');
 
 /* GET */
 // this will get replaced with below '/:id'
@@ -55,11 +56,20 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+var storage = multer.diskStorage({
+  destination:function (req, file, cb){
+    cb(null,'public/images/')
+  },
+  filename: function (req, file, cb){
+    cb(null,file.originalname)
+  }
+})
 
+var upload = multer({storage:storage})
 
 /* POST */
 // PRIORITY 1
-router.post('/new', function(req, res, next) {
+router.post('/new', upload.single('uploadimage'), function(req, res, next) {
   console.log(`POST: 'item/new' --> ${JSON.stringify(req.body)}`)
   res.render('thankyou', { title: 'Thanks!' });
 });

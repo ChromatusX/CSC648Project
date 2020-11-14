@@ -3,6 +3,8 @@ var router = express.Router();
 var db = require('./../db/index');
 var test = require('../db/helpers/test');
 
+var multer = require('multer');
+
 /* GET */
 // router.get('/', function(req, res, next) {
 //     res.render('index', { title: 'Home' });
@@ -38,6 +40,11 @@ router.get('/', function(req, res, next) {
       });
     })
 });
+
+//testing only
+router.get('/postitem', function(req,res,next){
+  res.render('newitem',{title:'postitem'});
+})
 
 /* POST */
 // PRIORITY 1
