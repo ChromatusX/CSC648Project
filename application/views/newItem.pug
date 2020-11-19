@@ -11,7 +11,7 @@ block content
     form(action="/item/new", method="post", enctype="multipart/form-data")
       .col.s6
         img(src="/images/itemplaceholder.png")
-        input(type='file', name = "uploadImage", accept = 'image/png, image/jpg')
+        input(type='file', name = "uploadImage", accept = 'image/*')
             
       .col.s6
         h7 ITEM NAME:
