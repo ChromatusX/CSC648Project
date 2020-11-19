@@ -59,7 +59,8 @@ function insertItem(name, description, price, category, fileName, userID){
                 resolve(myPromise)
             })
             .catch((err) =>{
-                reject(err.errno)
+              console.log(err);
+              reject(err);
             })
     }))
 }
@@ -91,7 +92,14 @@ function newItem(req, res) {
 
             sharp(filePath).resize(400).toFile(thumbnailPath);
 
-            insertItem(name, description, price, category, fileName, userID).then((myPromise) => { resolve(myPromise)})
+            insertItem(name, description, price, category, fileName, userID)
+            .then((myPromise) => {
+              resolve(myPromise);
+            })
+            .catch((err) => {
+              console.log(err);
+              reject(err);
+            })
         });
     }))
 
