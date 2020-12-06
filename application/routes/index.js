@@ -42,6 +42,16 @@ router.get('/', function(req, res, next) {
 
 /* POST */
 // PRIORITY 1
+
+/**
+ * REVIEW:
+ * It would be nice to have some comment 
+ * to briefly describe the function
+ * 
+ * The search should be display on a new page instead of the landing
+ * page
+ * 
+ */
 router.get('/search', function(req, res, next) {
   console.log(`POST: 'search' --> ${JSON.stringify(req.query)}`)
   searchData = req.query
@@ -69,6 +79,12 @@ router.get('/search', function(req, res, next) {
   })
 });
 
+/** 
+ * REVIEW:
+ * What is this for? if this is not being use let remove it
+ * 
+ * 
+ */
 router.get('/inboxv2', function(req, res, next) {
   res.render('inboxv2', { title: 'About Us' });
 });

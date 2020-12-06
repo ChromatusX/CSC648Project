@@ -14,6 +14,11 @@ function insert(name, message) {
   })
 }
 
+/**
+ * REVIEW:
+ * Need a description for this function
+ * 
+ */
 function getAll() {
   return new Promise((resolve, reject) => {
     db.query(`SELECT * FROM test_table`)
@@ -29,6 +34,18 @@ function getAll() {
   })
 }
 
+/**
+ * REVIEW:
+ * Need a description for this function
+ * 
+ * Line 48: 
+ *  Instead of doing filter='date:new->old' in the header,
+ *  it look better if you just leave it as just filter,
+ *  and set date:new->old as a defualt case in the switch case,
+ *  since we have a drrop down menu for the sort, it should not be possible 
+ *  to get any other value
+ * 
+ */
 function getSearchResults(category, text, filter='date:new->old') {
   return new Promise((resolve, reject) => {
     let sqlCommand = `SELECT item.id, item.name AS itemName, item.price, item.image, item.created, user.name AS userName
