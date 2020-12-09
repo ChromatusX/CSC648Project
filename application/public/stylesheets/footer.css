@@ -1,11 +1,21 @@
 
 
-  .footer {
-    background-color:#4E0D3A;
-    flex-shrink: 0;
-    bottom: -10px;
-  }
+.footer {
+  background-color:#4E0D3A;
+  border-radius: 25px 25px 0px 0px;
+}
 
-  #footer-content{
-    padding: 10px;
-  }
+#footer-content{
+  padding-top: 10px;
+  
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
