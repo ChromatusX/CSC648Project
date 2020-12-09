@@ -1,8 +1,21 @@
 .nav-wrapper {
   background-color: #4E0D3A !important;
+  border-radius: 0px 0px 25px 25px;
 }
 
 #navbar {
   background-color: #4E0D3A !important;
+  border-radius: 0px 0px 25px 25px;
 }
 
+.navbar-fixed {
+  /* border-radius: 0px 0px 25px 25px;s */
+}
+
+#logo {
+  padding-left: 10px;
+}
+
+#logo:hover {
+  color: #FFCA28;
+}
