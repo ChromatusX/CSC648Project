@@ -85,7 +85,6 @@ router.post('/message', function(req, res, next){
 });
 
 router.get('/:id', function(req, res, next) {
-  console.log(`GET: 'item/${req.params.id}'`)
   item.getItemByID(req.params.id)
   .then((item) => {
     res.render('item', { 
@@ -96,7 +95,7 @@ router.get('/:id', function(req, res, next) {
   })
   .catch((err) => {
     console.log(err)
-    res.render('landing', { title: 'Home' });
+    res.render('404', { title: 'Page Not Found' });
   });
 });
 
