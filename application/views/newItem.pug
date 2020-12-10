@@ -12,7 +12,8 @@ block content
       .col.s5.push-s3   
 
         img(src="/images/itemplaceholder.png")
-        input(type='file', name = "uploadImage", accept = 'image/png, image/jpg')
+        input(type='file', name = "uploadImage", accept = 'image/png, image/jpg' , onchange='readURL(this);')
+        img(id="blah")
         br
         br
         h7 ITEM NAME:
