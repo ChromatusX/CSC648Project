@@ -10,17 +10,34 @@ block content
     p
     form(action="/item/new", method="post", enctype="multipart/form-data")
       .col.s5.push-s3   
-
-        img(src="/images/itemplaceholder.png")
-        input(type='file', name = "uploadImage", accept = 'image/png, image/jpg' , onchange='readURL(this);')
-        img(id="blah")
-        br
+        
         br
         h7 ITEM NAME:
         br
         input(type='textarea' , ID = "PostItemName" , name = "itemname", required)
         br
+        .input-field
+          select(name='category', required)
+            option(value='' disabled selected) Choose a category
+            option(value='Art') Art
+            option(value='Books') Books
+            option(value='Clothes') Clothes
+            option(value='Electronics') Electronics
+            option(value='Home & Kitchen') Home &amp; Kitchen
+            option(value='Miscellaneous') Miscellaneous
+            option(value='Toys & Games') Toys &amp; Games
+            option(value='Tutoring') Tutoring
         br
+        h7 Optional: Upload a image below.
+        br
+        .row
+        .row
+        
+          .col.s1
+            input(type='file', id="newpic", name = "uploadImage", accept = 'image/png, image/jpg' , showing = true, onchange='display(this);')
+            br  
+            img(id="itemImg")
+
         h7 DESCRIPTION: 
         br
         textarea(name="description", ID="DescriptionArea", required)
@@ -31,21 +48,20 @@ block content
         input(type='number', ID="PostItemPrice", name = "price", min="0.00", step="0.01", required)
         br
         br
-        .input-field
-          select(name='category',required)
-            option(value='' disabled selected) Choose a category
-            option(value='Art') Art
-            option(value='Books') Books
-            option(value='Clothes') Clothes
-            option(value='Electronics') Electronics
-            option(value='Home & Kitchen') Home &amp; Kitchen
-            option(value='Miscellaneous') Miscellaneous
-            option(value='Toys & Games') Toys &amp; Games
-            option(value='Tutoring') Tutoring
+
         .row
           .col.push-s4
             p
             button(ID = "PostItemButton" type = 'submit') SUBMIT
+        .row
+        .row
+        
+        
+          
+      
+        
+          
+          
     //---------------------------------------------------------
     include components/footer
     //---------------------Javascript-------------------

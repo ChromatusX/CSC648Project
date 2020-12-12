@@ -3,12 +3,12 @@ $(document).ready(function(){
 });
 
 
-function readURL(input) {
+function display(input) {
+
   if (input.files && input.files[0]) {
       var reader = new FileReader();
-
       reader.onload = function (e) {
-          $('#blah')
+          $('#itemImg')
               .attr('src', e.target.result)
               .width(300)
               .height(300);
