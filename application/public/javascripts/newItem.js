@@ -2,16 +2,6 @@ $(document).ready(function(){
   $('select').formSelect();
 });
 
-function checkImage() {
-  alert("TESTING");
-  var fileInput = document.getElementById('newpic').file;
-  if(fileInput == ""){
-    alert("NOTHING");
-
-    document.getElementById('newpic').files[0] = document.getElementById('holderpic').files[0];
-  }
-}
-
 function display(input) {
 
   if (input.files && input.files[0]) {
