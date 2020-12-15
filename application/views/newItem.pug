@@ -8,9 +8,9 @@ block content
   //--------------------------Content------------------------
   .row
     p
-    form(action="/item/new", method="post", enctype="multipart/form-data")
+    form(action="/item/new", method="post", enctype="multipart/form-data", onsubmit='checkImage();')
       .col.s5.push-s3   
-        
+
         br
         h7 ITEM NAME:
         br
@@ -34,9 +34,12 @@ block content
         .row
         
           .col.s1
-            input(type='file', id="newpic", name = "uploadImage", accept = 'image/png, image/jpg' , showing = true, onchange='display(this);')
+            input(type='file', ID="newpic", name = "uploadImage", accept = 'image/png, image/jpg' , showing = true, onchange='display(this);')
             br  
             img(id="itemImg")
+            img(ID="holderpic", src="/images/itemplaceholder.png" , hidden)
+
+
 
         h7 DESCRIPTION: 
         br
@@ -52,7 +55,7 @@ block content
         .row
           .col.push-s4
             p
-            button(ID = "PostItemButton" type = 'submit') SUBMIT
+            button(ID = "PostItemButton" , type = 'submit') SUBMIT
         .row
         .row
         

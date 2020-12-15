@@ -81,6 +81,7 @@ function newItem(req, res) {
         let uploader = multer({storage: storage}).single('uploadImage');
         uploader(req, res, ()=>{
             let filePath = req.file.path;
+            console.log("testing" + req.file.path);
             let fileName = req.file.filename;
             let thumbnailName = `thumbnail-${fileName}`;
             let thumbnailPath = req.file.destination + "/" + thumbnailName;
