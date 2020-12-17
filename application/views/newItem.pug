@@ -16,6 +16,8 @@ block content
         br
         input(type='textarea' , ID = "PostItemName" , name = "itemname", required)
         br
+        br
+        h7 Required: Choose a category below.
         .input-field
           select(name='category', required)
             option(value='' disabled selected) Choose a category
@@ -37,7 +39,7 @@ block content
             input(type='file', ID="newpic", name = "uploadImage", accept = 'image/png, image/jpg' , showing = true, onchange='display(this);')
             br  
             img(id="itemImg")
-            img(ID="holderpic", src="/images/itemplaceholder.png" , hidden)
+            img(ID="holderpic", src="/images/itemplaceholder.png" , hidden=false)
 
 
 
