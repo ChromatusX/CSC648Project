@@ -49,3 +49,14 @@ a {
   width: 100%;
   overflow-y: auto;
 }
+
+#price-wrapper {
+  border-radius: 20px;
+  position: absolute;
+}
+
+.card-content {
+  position: relative;
+}
+
+

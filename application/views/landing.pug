@@ -44,25 +44,20 @@ block content
         .row
           if items
             each item in items
-              .col.s12.m6.l4
-                .card.medium
-                  a(href="/item/" + item.id target="_blank" rel="noopener noreferrer")
-                    .card-image#imageSize
-                      img.responsive-img(src="/images/items/thumbnail-" + item.image)
-                    .card-title
-                      .row.valign-wrapper#cardBody
-                        .col.s4#responsiveText
-                          h6 #{item.itemName}
-                        .col.s8#responsiveText
-                          h5.right $#{item.price} 
-                      //- .divider
-                      //- .row
-                      //-   .col.s6
-                      //-     p.left #{item.userName}
-                      //-   .col.s6
-                      //-     p.right #{item.created}
-                      
-                    //- .card-content= item.userName
+              .col.s12.m6.l3#card
+                a(href="/item/" + item.id target="_blank" rel="noopener noreferrer")
+                  .card.medium
+                    .card-image
+                      img#card-img(src="/images/items/thumbnail-" + item.image)
+                    .card-content
+                      .row.center
+                        h6 #{item.itemName}
+                      .row.valign-wrapper
+                        .col.s6.center#price-wrapper
+                          h4#price $#{item.price}
+                        .col.s6.center
+                          p #{item.userName}
+
           else
             h3.center Sorry, there are no items right now
   // ---------------------------------CONTENT---------------------------------
